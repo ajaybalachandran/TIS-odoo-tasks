@@ -1,0 +1,20 @@
+{
+    'name': 'Sales Commission',
+    'description': 'Sales based on commission',
+    'version': '1.0',
+    'summary': 'Each sales persons get a particular amount(%) of commission',
+    'author': 'Ajay',
+    'category': 'Sales',
+    'depends': ['sale', 'base', 'account'],
+    'data': [
+        'views/inherited_res_users_simplified_form.xml',
+        'views/sale_order_commission.xml',
+        'views/inherited_account_move_views_commission.xml',
+        'report/new_ir_actions_report_templates.xml',
+        'report/new_report_invoice.xml',
+    ],
+    'js': [],
+    'installable': True,
+    'application': True,
+    'license': 'LGPL-3',
+}

@@ -1,0 +1,12 @@
+<odoo>
+    <record id="inherited_new_purchase_order_form_view" model="ir.ui.view">
+        <field name="name">Sales Order Form</field>
+        <field name="model">purchase.order</field>
+        <field name="inherit_id" ref="purchase.purchase_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='origin']" position="after">
+                <field name="signature" widget="signature"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

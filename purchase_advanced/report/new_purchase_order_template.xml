@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_new_purchase_order_template" inherit_id="purchase.report_purchaseorder_document">
+        <xpath expr="//div[@id='total']" position="after">
+
+            <div id="digital_signature" class="row justify-content-end mt-4">
+                <div class="col-4">
+                    <img t-if="o.signature" t-att-src="'data:image/png;base64,%s' % o.signature"/>
+                </div>
+            </div>
+        </xpath>
+    </template>
+</odoo>

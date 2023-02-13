@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem
+        id="menu_test_hospital_root"
+        name="Test Hospital"
+        sequence="10"/>
+</odoo>

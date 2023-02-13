@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_new_invoice_document" inherit_id="account.report_invoice_document">
+            <xpath expr="//t[@t-set='tax_totals']" position="before">
+                <tr>
+                    <td>
+                        Commission Amount
+                    </td>
+                    <td style="text-align: right;">
+                        <t>
+                            <span t-esc="o.currency_id.symbol"/>
+                            <span t-esc="o.commission_amount"/>
+                        </t>
+                    </td>
+                </tr>
+            </xpath>
+
+    </template>
+</odoo>
