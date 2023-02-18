@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+pos_advanced.access_pos_return_reason,access_pos_return_reason,pos_advanced.model_pos_return_reason,base.group_user,1,1,1,1

@@ -18,7 +18,7 @@ class SaleOrder(models.Model):
     def _compute_commission_amount(self):
         res = self._compute_tax_totals()
         for order in self:
-            print(order)
+            # print(order)
             if res:
                 order.commission_amount = res
             else:
@@ -59,10 +59,12 @@ class AccountMove(models.Model):
                 move.commission_amount = 0.00
 
     def _compute_tax_totals(self):
-        super()._compute_tax_totals()
-        for move in self:
-            for i in move.line_ids:
-                print(i.debit)
+        # super()._compute_tax_totals()
+        # for move in self:
+        #     # print(move.line_ids)
+        #     for i in move.line_ids:
+        #         pass
+        #         # print(i.debit)
         for move in self:
             old_amount_total = move.tax_totals['amount_total']
             if move.tax_totals['amount_untaxed'] >= self.commission:
@@ -73,6 +75,27 @@ class AccountMove(models.Model):
                 self.amount_residual = move.tax_totals['amount_total']  # to change amount due
                 self.commission_amount = move.tax_totals['amount_total'] - old_amount_total
                 return self.commission_amount
+
+    # @api.model
+    # def create(self, vals):
+    #     print(vals)
+    #     move = super(AccountMove, self).create(vals)
+    #     print(move.line_ids)
+    #     a = self.env['account.account'].sudo().search([('code', '=', 400001)])
+    #     lines = []
+    #     val = {
+    #         'name': 'Commission Sales',
+    #         'journal_id': move.journal_id,  # ID of the journal
+    #         'account_id': a.id,  # ID of the account
+    #         'debit': self.commission_amount,  # Debit amount
+    #         'credit': 0,  # Credit amount
+    #         'move_id': move.journal_id,  # ID of the journal entry,
+    #         'move_type': 'entry',
+    #         'quantity': 1,  # the quantity of the product
+    #         'price_unit': self.commission_amount,
+    #     }
+    #     lines.append((0, 0, val))
+    #     move.line_ids = lines
 
 
 # class AccountTaxGroup(models.Model):
