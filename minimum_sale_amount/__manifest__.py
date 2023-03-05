@@ -1,0 +1,15 @@
+{
+    'name': 'Website Minimum Sale Amount',
+    'description': 'website minimum sale amount',
+    'version': '1.0',
+    'summary': 'min sale amt',
+    'author': 'Ajay',
+    'category': 'Website/Website',
+    'depends': ['website_sale', ],
+    'data': ['views/templates_inherited.xml',
+             'views/res_config_settings_views_inherited.xml',
+             ],
+    'installable': True,
+    'application': True,
+    'license': 'LGPL-3',
+}

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="cart_inherited" inherit_id="website_sale.cart">
+        <xpath expr="//t[@t-set='redirect_url']" position="replace">
+            <t t-call="website_sale.total"/>
+            <t t-if="website_sale.total &gt; 50">
+                <t t-set="redirect_url"
+                   t-value="'/web/login?redirect=/shop/checkout' if redirect_to_sign_in else '/shop/checkout?express=1'"/>
+            </t>
+            <t t-else="">
+                <t t-set="redirect_url"
+                   t-value="'/web/login?redirect=/shop/checkout' if redirect_to_sign_in else '/shop/cart'"/>
+            </t>
+
+
+
+        </xpath>
+        <xpath expr="//a[@role='button']" position="after">
+            <span>hiiiiiii</span>
+        </xpath>
+    </template>
+</odoo>
