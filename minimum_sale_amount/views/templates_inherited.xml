@@ -13,10 +13,17 @@
             </t>
 
 
-
         </xpath>
         <xpath expr="//a[@role='button']" position="after">
             <span>hiiiiiii</span>
         </xpath>
+<!--        <odoo>-->
+<!--            <template id="my_website_sale_cart" inherit_id="website_sale.cart">-->
+<!--                <xpath expr="//form" position="attributes">-->
+<!--                    <attribute name="data-oe-model">website_sale</attribute>-->
+<!--                </xpath>-->
+<!--            </template>-->
+<!--        </odoo>-->
+
     </template>
 </odoo>
